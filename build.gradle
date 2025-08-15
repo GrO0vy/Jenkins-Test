@@ -30,8 +30,10 @@ dependencies {
 }
 
 // ✅ JAR 대신 WAR 빌드 설정
-bootWar.enabled = false
-war.enabled =true
+bootWar{
+	archiveFileName = 'demo.war'
+	enabled = true
+}
 
 tasks.named('test') {
 	useJUnitPlatform()
