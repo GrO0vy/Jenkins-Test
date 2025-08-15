@@ -1,5 +1,6 @@
 plugins {
 	id 'java'
+	id 'war' // ✅ 추가
 	id 'org.springframework.boot' version '3.5.4'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
@@ -20,8 +21,21 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// ✅ WAR용으로 providedRuntime에 톰캣 추가
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+// ✅ JAR 대신 WAR 빌드 설정
+bootJar {
+	enabled = false
+}
+
+bootWar {
+	enabled = true
 }
 
 tasks.named('test') {
