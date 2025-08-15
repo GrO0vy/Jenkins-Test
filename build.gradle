@@ -22,8 +22,8 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
-	// ✅ WAR용으로 providedRuntime에 톰캣 추가
-	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+//	// ✅ WAR용으로 providedRuntime에 톰캣 추가
+//	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
